@@ -169,8 +169,14 @@
   .chk input{width:18px;height:18px;accent-color:var(--gold)}
   .f-submit{width:100%;justify-content:center;border:0;cursor:pointer;font-family:inherit}
   .f-submit[disabled]{opacity:.6;cursor:wait}
+  .f-alt{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:14px}
+  .f-alt span{width:100%;font-size:12.5px;color:rgba(255,255,255,.6)}
+  .f-alt .btn{flex:1;min-width:140px;justify-content:center;text-align:center;font-size:14px;padding:10px 14px}
+  .btn-ghost-w{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
+  .btn-ghost-w:hover{background:rgba(255,255,255,.08)}
   .f-msg{margin-top:14px;font-size:14px;line-height:1.6;min-height:1em}
   .f-msg.ok{color:#a7e3b5}.f-msg.err{color:#f4b4b4}
+  .f-msg a{color:var(--gold-light);text-decoration:underline;font-weight:600}
   .alt{margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
   .alt p{font-size:14px;color:var(--ink-soft);line-height:1.6;margin:0 0 14px}
   .alt p b{color:var(--navy)}
@@ -221,6 +227,7 @@
     .services .grid{grid-template-columns:1fr}
     .intro .facts{grid-template-columns:1fr 1fr}
   }
+  @media (max-width:560px){ .hero .actions .btn{flex:1 1 100%} }
 </style>
 </head>
 <body>
@@ -255,6 +262,7 @@
        분야별 전문가가 책임지는 지식재산 분야 법률사무소입니다.</p>
     <div class="actions">
       <a class="btn btn-gold" href="#consult">상담 신청하기</a>
+      <a class="btn btn-kakao" href="https://open.kakao.com/o/sn9CeCUi" target="_blank" rel="noopener">카카오톡 문의</a>
       <a class="btn btn-outline" href="#services">주요 업무 보기</a>
     </div>
   </div>
@@ -434,6 +442,11 @@
           <label class="chk"><input type="checkbox" id="f-agree" name="개인정보 수집 동의" value="동의함" required> 개인정보 수집 및 이용에 동의합니다. <em>*</em></label>
         </div>
         <button class="btn btn-gold f-submit" type="submit">메일로 상담 신청하기</button>
+        <div class="f-alt">
+          <span>메일 앱이 열리지 않거나 간단히 묻고 싶으시면</span>
+          <a class="btn btn-kakao" href="https://open.kakao.com/o/sn9CeCUi" target="_blank" rel="noopener">카카오톡 문의</a>
+          <a class="btn btn-ghost-w" href="tel:18111945">전화 1811-1945</a>
+        </div>
         <div class="f-msg" id="formMsg" role="status" aria-live="polite"></div>
       </form>
     </div>
@@ -485,7 +498,8 @@ var href='mailto:info@worldip.co.kr?subject='+encodeURIComponent('[상담 신청
          +'&body='+encodeURIComponent(body);
 m.className='f-msg ok';
 m.innerHTML='메일 앱을 열었습니다. <b>전화번호를 적어 보내 주세요.</b><br>'
-           +'열리지 않으면 카카오톡 오픈채팅이나 전화를 이용해 주세요.';
+           +'열리지 않으면 <a href="https://open.kakao.com/o/sn9CeCUi" target="_blank" rel="noopener">카카오톡 오픈채팅</a>'
+           +'이나 <a href="tel:18111945">전화 1811-1945</a>를 이용해 주세요.';
 window.location.href=href;});})();
 </script>
 </body>
